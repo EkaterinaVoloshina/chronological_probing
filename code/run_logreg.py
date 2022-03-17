@@ -13,9 +13,9 @@ def get_embeddings(task, number):
 def main():
     task = 'DC'
     model = 'T5'
-    X_train, y_train, X_test, y_test = load_files(task, model)
+    X_train, y_train, X_test, y_test = load_files(task, model, '12')
     embeddings = get_embeddings(task)
-    logreg = LogRegClassification(y_train, y_test, embeddings, 'DC')
+    logreg = LogRegClassification(y_train, y_test, embeddings, task)
     predictions, scores = logreg.probe()
 
 if __name__=='__main__':

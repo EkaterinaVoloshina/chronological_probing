@@ -110,5 +110,10 @@ def run_on_task(task_name):
     embeddings = Embeddings(X_test, 512, f'{task_name}_TEST', task_name.lower())
     embeddings.calculate()
     
-if __name__ == "__main__":
+def main():
+    task_name = "person"
     run_on_task(task_name)
+    run_logreg(task_name)
+        
+if __name__ == "__main__":
+    main()

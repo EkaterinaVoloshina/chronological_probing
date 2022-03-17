@@ -82,7 +82,21 @@ def run_on_task(task_name):
     embeddings.calculate()
     embeddings = Embeddings(X_test, self.size, f'{task_name}_TEST')
     embeddings.calculate()
-        
-if __name__ == "__main__":
+    
+def run_logreg(task_name):
+    X_train, y_train, X_test, y_test = load_files(task_name)
+    embeddings = [[f'./embeddings/T5_checkpoints_{task_name}_TRAIN_final.pickle',
+                  f'./embeddings/T5_checkpoints_{task_name}_TEST_final.pickle']]
+    logreg = LogRegClassification(y_train, y_test, embeddings, task_name, 'final_T5')
+    predictions, scores = logreg.probe()
+    return predictions, scores
+
+
+def main():
     task_name = "person"
     run_on_task(task_name)
+    run_logreg(task_name)
+        
+        
+if __name__ == "__main__":
+    main()

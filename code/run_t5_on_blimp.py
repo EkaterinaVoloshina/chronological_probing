@@ -2,6 +2,7 @@ from utils import load_files
 from tqdm.notebook import tqdm
 from t5_blimp_embeddings import Embeddings
 
+
 def get_checkpoints(num):
     checkpoints = num
     path = []

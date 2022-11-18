@@ -46,4 +46,15 @@ logreg = LogRegClassification(dir_path=PATH_TO_EMBEDDINGS,
                               random=False)
 ```
 
+### Reference
+
+```
+@article{voloshina2022neural,
+  title={Is neural language acquisition similar to natural? A chronological probing study},
+  author={Voloshina, Ekaterina and Serikov, Oleg and Shavrina, Tatiana},
+  journal={arXiv preprint arXiv:2207.00560},
+  year={2022}
+}
+```
+
 
